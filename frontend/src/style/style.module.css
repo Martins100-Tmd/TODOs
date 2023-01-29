@@ -1,0 +1,15 @@
+.bg {
+  background-image: url("../Assets/Notebg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  z-index: -1000%;
+}
+
+.bgi {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: -500%;
+}

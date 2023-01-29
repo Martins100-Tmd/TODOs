@@ -1,0 +1,84 @@
+#sd {
+  transition: ease 0.6s;
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+}
+#modal {
+  z-index: 9999%;
+  left: 36%;
+}
+@media (max-width: 640px) {
+  #modal {
+    left: 5%;
+  }
+}
+#bgi {
+  z-index: -1%;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+}
+#bg {
+  z-index: -1%;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+}
+#main {
+  background-image: url("../Assets/Notebg.jpg");
+  /* background-color: #070750; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#maintemplate {
+  background-color: rgba(0, 0, 0, 0.658);
+  width: 100vw;
+  height: 100vh;
+}
+#log {
+  left: 16%;
+}
+
+#temp {
+  display: grid;
+  grid-template-areas:
+    "A A A A B B"
+    "A A A A B B"
+    "A A A A B B";
+  width: 90%;
+}
+@media (max-width: 640px) {
+  #temp {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1;
+  }
+}
+#a {
+  grid-area: A;
+}
+#b {
+  grid-area: B;
+}
+
+#mom {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 5px solid rgb(62, 4, 62);
+  padding: 4px;
+}
+#son {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid rgb(121, 103, 255);
+  padding: 1px;
+}
