@@ -66,7 +66,7 @@ export const UserProvider = ({ children }: child) => {
             success: true,
             Todos: data,
             error: false,
-            change,
+            change: change,
           }));
         } else {
           setstate((prev) => ({ ...prev, error: true, success: false }));
