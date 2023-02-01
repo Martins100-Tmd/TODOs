@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(errHandler);
 app.use("/users", require("./routes/userroutes"));
 app.get("*", (req, res) => {
-  res.sendFile(path.normalize(__dirname + "frontend/build/index.html"));
+  res.sendFile(path.normalize(__dirname + "../frontend/build/index.html"));
 });
 connectDB().then(() => {
   app.listen(PORT, () => {
