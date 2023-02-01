@@ -10,6 +10,12 @@ require("dotenv").config();
 const secret = process.env.SECRET || "ACB123";
 router.use(bodyParser.json());
 router.get(
+  "/world",
+  asyncHandler(async (req, res) => {
+    res.status(200).json({ message: "Welcome to Wonderland", success: "true" });
+  })
+);
+router.get(
   "/",
   asyncHandler(async (req, res) => {
     let token = req.headers.authorization.split(" ")[1];
