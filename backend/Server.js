@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(errHandler);
 app.use("/users", require("./routes/userroutes"));
 app.get("*", (req, res) => {
-  res.sendFile("index.html");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 connectDB().then(() => {
   app.listen(PORT, () => {
