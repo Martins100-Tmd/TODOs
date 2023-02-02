@@ -24,6 +24,7 @@ app.get("*", (req, res) => {
     path.resolve(__dirname, "../", "frontend", "build", "index.html")
   );
 });
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
