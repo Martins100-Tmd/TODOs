@@ -24,6 +24,7 @@ const LoginComponent = (): JSX.Element => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success) {
+            console.log(data);
             localStorage.setItem(
               "me",
               JSON.stringify({

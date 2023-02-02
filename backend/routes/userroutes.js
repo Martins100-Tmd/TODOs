@@ -18,12 +18,18 @@ router.get(
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    let token = req.headers.authorization.split(" ")[1];
-    let id = jwt.verify(token, secret);
-    const goal = await Users.findById(id.id);
-    goal
-      ? res.status(200).json(goal)
-      : res.status(400).json({ message: "User doesn't exist", success: false });
+    if (req.headers.authorization) {
+      let token = req.headers.authorization.split(" ")[1];
+      let id = jwt.verify(token, secret);
+      const goal = await Users.findById(id.id);
+      goal
+        ? res.status(200).json(goal)
+        : res
+            .status(400)
+            .json({ message: "User doesn't exist", success: false });
+    } else {
+      res.status(401).json({ message: "Not authorized", success: false });
+    }
   })
 );
 router.post(

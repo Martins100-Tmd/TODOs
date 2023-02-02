@@ -78,6 +78,7 @@ const PersonalComponent = (): JSX.Element => {
       })
       .then((data) => {
         if (data) {
+          console.log(data);
           setb(
             data.lifestyle_todos.filter((item: any) => {
               return item.body !== "" && item.body;
