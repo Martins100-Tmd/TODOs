@@ -59,9 +59,8 @@ const PersonalComponent = (): JSX.Element => {
         setload((l) => ({ ...l, error: 1 }));
       })
       .catch((err) => {
-        if (err) throw new Error(err);
         setload((l) => ({ ...l, error: 0 }));
-        console.log(err);
+        if (err) throw new Error(err);
       });
   };
   useEffect(() => {
@@ -71,6 +70,7 @@ const PersonalComponent = (): JSX.Element => {
       headers: {
         Authorization: "Bearer " + auth,
       },
+      mode: "cors",
     })
       .then((res) => {
         if (!res.ok) setload((l) => ({ ...l, error: 0 }));
