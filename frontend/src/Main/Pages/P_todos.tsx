@@ -32,6 +32,7 @@ const PersonalComponent = (): JSX.Element => {
   const PUT = () => {
     fetch(`http://localhost:3300/users/update`, {
       method: "PUT",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + auth,
@@ -67,6 +68,7 @@ const PersonalComponent = (): JSX.Element => {
   useEffect(() => {
     fetch(`http://localhost:3300/users`, {
       method: "GET",
+      mode: "no-cors",
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -95,6 +97,7 @@ const PersonalComponent = (): JSX.Element => {
     let ID = target.dataset.title;
     fetch(`http://localhost:3300/users/delete`, {
       method: "DELETE",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + auth,

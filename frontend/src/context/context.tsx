@@ -53,6 +53,7 @@ export const UserProvider = ({ children }: child) => {
       headers: {
         Authorization: "Bearer " + auth,
       },
+      mode: "no-cors",
     })
       .then((res) => {
         if (!res.ok)
