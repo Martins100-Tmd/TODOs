@@ -15,7 +15,7 @@ const SignupComponent = (): JSX.Element => {
   let navigate = useNavigate();
   const SET = () => {
     console.log(all);
-    fetch("http://localhost:5500/users", {
+    fetch("http://localhost:3300/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

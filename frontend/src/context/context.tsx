@@ -48,7 +48,7 @@ export const UserProvider = ({ children }: child) => {
     setcount(mole);
   };
   useEffect(() => {
-    fetch(`http://localhost:5500/users`, {
+    fetch(`http://localhost:3300/users`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + auth,

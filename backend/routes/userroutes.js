@@ -191,8 +191,8 @@ router.put(
           req.headers.authorization.startsWith("Bearer")
         ) {
           id = req.headers.authorization.split(" ")[1];
-          id = jwt.verify(id, secret);
-          const user = await Users.findById(id.id);
+          id = jwt.verify(id, secret).id;
+          const user = await Users.findById(id);
           if (user) {
             if (req.body.password) {
               password = req.body.password;
@@ -208,6 +208,7 @@ router.put(
             });
             delete req.body.UpdateOne;
             req.body.password = HashedPassword;
+            console.log(date());
             let New = { ...req.body, update: date(), updatedClock: clock() };
             const vUser = await Users.findOneAndUpdate({ _id: id }, New, {
               new: true,

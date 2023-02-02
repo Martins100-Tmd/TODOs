@@ -26,7 +26,7 @@ const SettingComponent = (): JSX.Element => {
   let navigate = useNavigate();
   const Update = () => {
     all.password === all.confirmpassword
-      ? fetch(`http://localhost:5500/users/update`, {
+      ? fetch(`http://localhost:3300/users/update`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const SettingComponent = (): JSX.Element => {
       : console.log("localStorage is undefined");
   };
   const Delete = () => {
-    fetch(`http://localhost:5500/users/delete`, {
+    fetch(`http://localhost:3300/users/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const SettingComponent = (): JSX.Element => {
       .catch((err) => console.log(err));
   };
   const Verify = () => {
-    fetch("http://localhost:5500/users/verify", {
+    fetch("http://localhost:3300/users/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -30,7 +30,7 @@ const PersonalComponent = (): JSX.Element => {
   let auth = JSON.parse(localStorage.getItem("me") || "{}").auth;
   let [text, settext] = useState<string | undefined>("");
   const PUT = () => {
-    fetch(`http://localhost:5500/users/update`, {
+    fetch(`http://localhost:3300/users/update`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const PersonalComponent = (): JSX.Element => {
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:5500/users`, {
+    fetch(`http://localhost:3300/users`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + auth,
@@ -94,7 +94,7 @@ const PersonalComponent = (): JSX.Element => {
   const HandClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     let target = e.target as HTMLDivElement;
     let ID = target.dataset.title;
-    fetch(`http://localhost:5500/users/delete`, {
+    fetch(`http://localhost:3300/users/delete`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

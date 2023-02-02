@@ -81,11 +81,11 @@ const StatComponent = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-stretch w-full gap-5 ">
-          <div className="w-4/6">
+        <div className="flex sm:flex-row flex-col items-center sm:items-stretch w-full gap-5 ">
+          <div className="sm:w-4/6 w-full">
             <LineComponent />
           </div>
-          <div className="w-2/6  bg-white rounded-xl shadow grid grid-cols-1 items-start gap-3 p-5">
+          <div className="sm:w-2/6 w-full  bg-white rounded-xl shadow grid grid-cols-1 items-start gap-3 p-5">
             <div className="flex flex-row items-start mt-3 gap-5">
               <div className="bg-black rounded-full w-14 h-14 shadow-lg relative p-3 border border-green-300">
                 <i className="fa text-green-500 absolute top-1/3 left-1/3">
@@ -108,7 +108,7 @@ const StatComponent = (): JSX.Element => {
               <div className="flex flex-col items-start">
                 <p className="font-pop text-xl">Account updated</p>
                 <small className="font-pop font-semibold text-gray-700 items-start">
-                  {State.Todos.date}
+                  {State.Todos.update}
                 </small>
               </div>
             </div>
