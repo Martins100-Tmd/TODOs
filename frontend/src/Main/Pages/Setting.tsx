@@ -28,7 +28,7 @@ const SettingComponent = (): JSX.Element => {
     all.password === all.confirmpassword
       ? fetch(`http://localhost:3300/users/update`, {
           method: "PUT",
-          mode: "no-cors",
+
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + auth,
@@ -59,7 +59,7 @@ const SettingComponent = (): JSX.Element => {
   const Delete = () => {
     fetch(`http://localhost:3300/users/delete`, {
       method: "DELETE",
-      mode: "no-cors",
+
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + auth,
@@ -81,7 +81,7 @@ const SettingComponent = (): JSX.Element => {
   const Verify = () => {
     fetch("http://localhost:3300/users/verify", {
       method: "POST",
-      mode: "no-cors",
+
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + auth,
