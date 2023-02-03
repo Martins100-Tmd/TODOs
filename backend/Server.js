@@ -17,7 +17,6 @@ app.use(
 );
 app.use(bodyParser.json());
 app.use(errHandler);
-console.log(process.env.PORT);
 app.use("/users", require("./routes/userroutes"));
 app.get("*", (req, res) => {
   res.sendFile(
@@ -26,7 +25,7 @@ app.get("*", (req, res) => {
 });
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on port ${PORT}`);
   });
 });
