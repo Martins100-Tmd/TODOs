@@ -42,6 +42,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm install && cd ./frontend && npm install npm run build"
   },
+  "engines": {
+    "node": "14.18.1",
+    "npm":"6.14.15"
+  },
   "proxy": "http://localhost:3300",
   "keywords": [],
   "author": "",
