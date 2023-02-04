@@ -15,7 +15,7 @@ const SignupComponent = (): JSX.Element => {
   let navigate = useNavigate();
   const SET = () => {
     console.log(all);
-    fetch("http://localhost:3300/users", {
+    fetch("https://eapi-production.up.railway.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

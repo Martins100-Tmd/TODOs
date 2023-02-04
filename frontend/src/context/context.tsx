@@ -48,7 +48,7 @@ export const UserProvider = ({ children }: child) => {
     setcount(mole);
   };
   useEffect(() => {
-    fetch(`http://localhost:3300/users`, {
+    fetch(`https://eapi-production.up.railway.app/users`, {
       method: "GET",
       headers: {
         Authorization: "Bearer " + auth,

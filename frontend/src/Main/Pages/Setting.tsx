@@ -26,7 +26,7 @@ const SettingComponent = (): JSX.Element => {
   let navigate = useNavigate();
   const Update = () => {
     all.password === all.confirmpassword
-      ? fetch(`http://localhost:3300/users/update`, {
+      ? fetch(`https://eapi-production.up.railway.app/users/update`, {
           method: "PUT",
 
           headers: {
@@ -57,7 +57,7 @@ const SettingComponent = (): JSX.Element => {
       : console.log("localStorage is undefined");
   };
   const Delete = () => {
-    fetch(`http://localhost:3300/users/delete`, {
+    fetch(`https://eapi-production.up.railway.app/users/delete`, {
       method: "DELETE",
 
       headers: {
@@ -79,7 +79,7 @@ const SettingComponent = (): JSX.Element => {
       .catch((err) => console.log(err));
   };
   const Verify = () => {
-    fetch("http://localhost:3300/users/verify", {
+    fetch("https://eapi-production.up.railway.app/users/verify", {
       method: "POST",
 
       headers: {

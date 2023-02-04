@@ -30,7 +30,7 @@ const PersonalComponent = (): JSX.Element => {
   let [text, settext] = useState<string | undefined>("");
   let auth = JSON.parse(localStorage.getItem("me") || "{}").auth;
   const PUT = () => {
-    fetch(`http://localhost:3300/users/update`, {
+    fetch(`https://eapi-production.up.railway.app/users/update`, {
       method: "PUT",
 
       headers: {
@@ -66,7 +66,7 @@ const PersonalComponent = (): JSX.Element => {
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:3300/users`, {
+    fetch(`https://eapi-production.up.railway.app/users`, {
       method: "GET",
 
       headers: {
@@ -95,7 +95,7 @@ const PersonalComponent = (): JSX.Element => {
   const HandClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     let target = e.target as HTMLDivElement;
     let ID = target.dataset.title;
-    fetch(`http://localhost:3300/users/delete`, {
+    fetch(`https://eapi-production.up.railway.app/users/delete`, {
       method: "DELETE",
 
       headers: {
