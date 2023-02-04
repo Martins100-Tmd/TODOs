@@ -42,6 +42,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm install && cd ./frontend && npm install npm run build"
   },
+  "proxy": "http://localhost:3300",
   "keywords": [],
   "author": "",
   "license": "ISC"
