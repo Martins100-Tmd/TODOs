@@ -14,7 +14,7 @@ const LoginComponent = (): JSX.Element => {
   let navigate = useNavigate();
   const Login = () => {
     if (state) {
-      fetch("http://todos-production-35d8.up.railway.app/users/login", {
+      fetch("http://localhost:3300/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

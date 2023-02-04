@@ -78,7 +78,7 @@ router.post(
         ],
       });
       let id = user._id;
-      const Token = jwt.sign({ id }, "ACB123", { expiresIn: "2d" });
+      const Token = jwt.sign({ id }, secret, { expiresIn: "30d" }, {});
       res.status(200).json({
         user: `${user._id}`,
         message: "Account Registration Successful",
@@ -97,7 +97,7 @@ router.post(
     const userExist = await Users.findOne({ email });
     if (userExist && (await bcrypt.compare(password, userExist.password))) {
       const id = userExist._id;
-      const Token = jwt.sign({ id }, "ACB123", { expiresIn: "2d" });
+      const Token = jwt.sign({ id }, secret, { expiresIn: "2d" });
       res.status(200).json({
         success: true,
         name: userExist.name,
@@ -209,7 +209,7 @@ router.put(
             }
             const Salt = await bcrypt.genSalt(10);
             const HashedPassword = await bcrypt.hash(password, Salt);
-            const Token = jwt.sign({ id }, "ACB123", {
+            const Token = jwt.sign({ id }, secret, {
               expiresIn: "30d",
             });
             delete req.body.UpdateOne;
