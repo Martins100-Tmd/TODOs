@@ -64,31 +64,17 @@ const BusinessComponent = (): JSX.Element => {
       });
   };
   useEffect(() => {
-    fetch(`https://eapi-production.up.railway.app/users`, {
-      method: "GET",
-
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    })
-      .then((res) => {
-        if (!res.ok) setload((l) => ({ ...l, error: 0 }));
-        return res.json();
-      })
-      .then((data) => {
-        if (data) {
-          setb(
-            data.business_todos.filter((item: any) => {
-              return item.body !== "" && item.body;
-            })
-          );
-        }
-        setload((l) => ({ ...l, error: 1 }));
-      })
-      .catch((err) => {
-        setload((l) => ({ ...l, error: 0 }));
-        if (err) throw new Error(err);
-      });
+    if (state.Todos && state.success) {
+      setb(
+        state.Todos.business_todos?.filter((item: any) => {
+          return item.body !== "" && item.body;
+        })
+      );
+      console.log(b);
+      setload((l) => ({ ...l, error: 1 }));
+    } else {
+      setload((l) => ({ ...l, error: 0 }));
+    }
   }, [load.add, load.delete, load.error, auth]);
   const HandClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     setload((l) => ({ ...l, modal: 0 }));

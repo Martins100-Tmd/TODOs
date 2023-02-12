@@ -1,12 +1,10 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 export type stateType = {
   Todos: object;
-  error: boolean;
   success: boolean;
 };
 const initialState = {
   Todos: {},
-  error: false,
   success: true,
 };
 const User = createContext(undefined as any);
@@ -19,7 +17,7 @@ type objt = {
   business_todos: Array<object>;
   personal_todos: Array<object>;
 };
-type objT = {
+export type objT = {
   a: number;
   b: number;
   c: number;
@@ -55,8 +53,7 @@ export const UserProvider = ({ children }: child) => {
       },
     })
       .then((res) => {
-        if (!res.ok)
-          setstate((prev) => ({ ...prev, error: true, success: false }));
+        if (!res.ok) setstate((prev) => ({ ...prev, success: false }));
         return res.json();
       })
       .then((data) => {
@@ -65,16 +62,25 @@ export const UserProvider = ({ children }: child) => {
             ...prev,
             success: true,
             Todos: data,
-            error: false,
             change: change,
           }));
         } else {
-          setstate((prev) => ({ ...prev, error: true, success: false }));
+          setstate((prev) => ({
+            ...prev,
+            success: false,
+            change,
+          }));
         }
       })
       .catch((err) => {
-        if (err) setstate((prev) => ({ ...prev, error: true, success: false }));
+        if (err)
+          setstate((prev) => ({
+            ...prev,
+            success: false,
+            change,
+          }));
       });
+    console.log(state);
   }, [count]);
   return <User.Provider value={{ state, setstate }}>{children}</User.Provider>;
 };

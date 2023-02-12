@@ -7,7 +7,7 @@ interface Iprop {
 const SideBarComponentII = ({ name }: Iprop): JSX.Element => {
   return (
     <div
-      className="flex flex-col seven:items-start px-3 mt-5 w-full items-center min-h-screen"
+      className="flex flex-col seven:items-start px-3 mt-5 w-full items-center min-h-screen overflow-y-scroll"
       id="SB"
     >
       <div className="flex flex-row items-center seven:self-start gap-5 border-b border-gray-200 pb-5 self-center">
@@ -17,8 +17,12 @@ const SideBarComponentII = ({ name }: Iprop): JSX.Element => {
           id="img"
           className="w-Ten inline rounded-full border-2 border-black object-cover"
         />
-        <p className="font-pop font-semibold text-lg ">{name}</p>
-        <i className="fa text-2xl text-black ">&#xf0f3;</i>
+        <div className="flex flex-col items-start ml-2">
+          <p className="font-pop font-semibold text-lg ">{name}</p>
+          <small className="text-xs font-semibold font-pop text-green-600">
+            Active
+          </small>
+        </div>
       </div>
       <Link
         to={"/welcome"}
@@ -111,7 +115,7 @@ const SideBarComponentII = ({ name }: Iprop): JSX.Element => {
           Lifestyle
         </p>
       </div>
-      <div className="mt-32 w-full flex flex-col items-start">
+      <div className="mt-16 w-full flex flex-col items-start overflow-y-scroll">
         <div
           className="flex flex-row items-center w-full mt-10 hover:border-r-2 border-black cursor-pointer p-2"
           data-title="setting"

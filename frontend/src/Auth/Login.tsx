@@ -34,7 +34,7 @@ const LoginComponent = (): JSX.Element => {
             );
             setTimeout(() => {
               navigate(data.page);
-            }, 1000);
+            }, 900);
           }
         })
         .catch((err) => console.log(err));
@@ -44,7 +44,7 @@ const LoginComponent = (): JSX.Element => {
     <div className={style.bg}>
       <div className={style.bgi}>
         <div
-          className="flex md:flex-row flex-col w-2/3 mx-auto rounded shadow min-h-400 pt-10 z-50 absolute"
+          className="flex md:flex-row flex-col sm:w-2/3 w-nine mx-auto rounded shadow min-h-400 pt-10 z-50 absolute"
           id="log"
         >
           <div className="md:w-2/5 w-full bg-cyan-900 md:rounded-l md:inline hidden relative">
@@ -58,8 +58,8 @@ const LoginComponent = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="md:w-3/5 w-full bg-gray-50 p-10 md:rounded-r">
-            <form className="w-3/4 mx-auto rounded-sm  flex flex-col items-start shadow bg-white p-5 gap-5 mt-16">
+          <div className="md:w-3/5 w-full bg-gray-50 p-10 md:rounded-r rounded-md">
+            <form className="sm:w-3/4 mx-auto rounded-sm  flex flex-col items-start shadow bg-white p-5 sm:mt-16">
               <div className="items-start w-full">
                 <input
                   type={"text"}
@@ -70,7 +70,7 @@ const LoginComponent = (): JSX.Element => {
                   }}
                 />
               </div>
-              <div className="items-start w-full">
+              <div className="items-start w-full my-7">
                 <input
                   type={"password"}
                   className="font-pop text-base p-3 shadow w-full block outline-none border border-cyan-50"
@@ -82,7 +82,7 @@ const LoginComponent = (): JSX.Element => {
               </div>
               <button
                 type={"button"}
-                className="bg-black text-white font-pop text-base block w-full p-3"
+                className="bg-black text-white font-pop text-base block w-full p-3 mt-5"
                 onClick={() => {
                   Login();
                   console.log(state);

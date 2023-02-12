@@ -75,13 +75,13 @@ const MainComponent = (): JSX.Element => {
       <div className="flex flex-col items-stretch w-full">
         <nav
           className="sm:flex sm:flex-row justify-between w-full
-        items-stretch pt-10 px-5 grid grid-cols-2 sticky top-0 bg-white"
+        items-stretch pt-5 px-5 grid grid-cols-2 sticky top-0 bg-white"
         >
           <p className="font-pop sm:text-2xl text-xl text-black items-start font-black w-full mx-3 place-self-start">
             My Dashboard
           </p>
           <i
-            className="text-4xl fa sm:hidden inline place-self-end text-black"
+            className="text-3xl fa sm:hidden inline place-self-end text-black"
             onClick={() => {
               all.sdb
                 ? setall((a) => ({ ...a, sdb: false }))

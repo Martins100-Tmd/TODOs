@@ -7,7 +7,7 @@ module.exports = {
         pop: ["Poppins"],
       },
       width: {
-        Ten: ["13%"],
+        Ten: ["14%"],
         nine: ["90%"],
         40: ["40%"],
         // 200: ["200px"],

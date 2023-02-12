@@ -7,18 +7,25 @@ interface Iprop {
 const SideBarComponent = ({ name }: Iprop): JSX.Element => {
   return (
     <div
-      className="flex flex-col seven:items-start h-screen px-3 mt-5 w-full items-center"
+      className="flex flex-col seven:items-start h-screen px-3 mt-5 w-full items-center overflow-x-scroll"
       id="SB"
     >
-      <div className="flex flex-row items-center seven:self-start gap-5 border-b border-gray-200  pb-5 self-center">
-        <img
-          alt="user"
-          src={User}
-          id="img"
-          className="w-Ten inline rounded-full object-cover bg-white border-2 border-slate-300"
-        />
-        <p className="font-pop font-semibold text-lg ">{name}</p>
-        <i className="fa text-2xl text-black ">&#xf0f3;</i>
+      <div className="flex flex-row items-center seven:self-start border-b border-gray-200  pb-5 self-center w-full">
+        <div className="w-Ten relative">
+          <img
+            alt="user"
+            src={User}
+            id="img"
+            className="w-full inline rounded-full object-cover bg-white border-2 border-slate-300 relative"
+          />
+          <i className="text-2xl text-green-600 absolute -ml-4 mt-2">&#9679;</i>
+        </div>
+        <div className="flex flex-col items-start ml-3">
+          <p className="font-pop font-semibold text-base">{name}</p>
+          <small className="text-xs text-green-600 font-pop font-semibold">
+            Active
+          </small>
+        </div>
       </div>
       <Link
         to={"/welcome"}
@@ -112,7 +119,7 @@ const SideBarComponent = ({ name }: Iprop): JSX.Element => {
           Lifestyle
         </p>
       </div>
-      <div className="mt-20 w-full flex flex-col items-start">
+      <div className="mt-16 w-full flex flex-col items-start overflow-y-scroll">
         <div
           className="flex seven:flex-row flex-col items-center w-full mt-10 hover:bg-blue_hover-0 hover:rounded-md cursor-pointer p-3"
           data-title="setting"

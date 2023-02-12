@@ -58,7 +58,7 @@ const SignupComponent = (): JSX.Element => {
           </div>
           <div className="md:w-3/5 w-full bg-gray-50 p-10 md:rounded-r">
             <form
-              className="w-3/4 mx-auto rounded-sm  flex flex-col items-start shadow bg-white p-5 gap-5 mt-10"
+              className="sm:w-3/4 mx-auto rounded-sm  flex flex-col items-start shadow bg-white p-5 mt-10"
               id="form"
             >
               <div className="w-full items-start">
@@ -74,7 +74,7 @@ const SignupComponent = (): JSX.Element => {
                   }
                 />
               </div>
-              <div className="w-full items-start">
+              <div className="w-full items-start mt-5">
                 <input
                   type={"email"}
                   className="py-3 px-2 rounded font-pop font-semibold text-sm block w-full shadow outline-none"
@@ -87,7 +87,20 @@ const SignupComponent = (): JSX.Element => {
                   }
                 />
               </div>
-              <div className="w-full items-start">
+              <div className="w-full items-start mt-5">
+                <input
+                  type={"password"}
+                  className="py-3 px-2 rounded font-pop font-semibold text-sm block w-full shadow outline-none"
+                  placeholder="Your Password"
+                  name="password"
+                  id="password"
+                  value={all.password}
+                  onChange={(e) =>
+                    setall((prev) => ({ ...prev, password: e.target.value }))
+                  }
+                />
+              </div>
+              <div className="w-full items-start mt-5">
                 <input
                   type={"password"}
                   className="py-3 px-2 rounded font-pop font-semibold text-sm block w-full shadow outline-none"
@@ -101,7 +114,7 @@ const SignupComponent = (): JSX.Element => {
                 />
               </div>
               <button
-                className="bg-black p-3 rounded text-sm font-pop text-white font-semibold block w-full"
+                className="bg-black p-3 rounded text-sm font-pop text-white font-semibold block w-full mt-5"
                 type={"button"}
                 onClick={() => SET()}
               >
